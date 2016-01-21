@@ -8,6 +8,10 @@ python:
   - 3.4
   - pypy
 
+before_install:
+  - if [[ $SHIPPABLE_PYTHON == '3.2' ]]; then pip install coverage==3.7.1 codecov ; fi
+  - echo $SHIPPABLE_PYTHON
+  
 install:
   - pip install -r requirements.txt
 
