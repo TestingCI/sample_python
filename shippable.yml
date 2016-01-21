@@ -9,8 +9,8 @@ python:
   - pypy
 
 before_install:
-  - if [[ $SHIPPABLE_PYTHON == '3.2' ]]; then pip install coverage==3.7.1 codecov ; fi
-  - echo $SHIPPABLE_PYTHON
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.2' ]]; then pip install coverage==3.7.1 codecov ; fi
+  - echo $TRAVIS_PYTHON_VERSION
   
 install:
   - pip install -r requirements.txt
